@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>Video Meet!</title>
+	<link rel="stylesheet" type="text/css" href="assets/css/vid.css" />
+	<style>
+		body {
+			font-family: 'Arial', sans-serif;
+			background: linear-gradient(to right, #663399, #8A2BE2);
+			margin: 0;
+			padding: 0;
+			color: #fff;
+		}
+
+		#start-button {
+			background-color: #4CAF50;
+			/* Green */
+		}
+
+		#start-button:hover {
+			background-color: #45a049;
+			/* Darker Green on hover */
+		}
+
+		#stop-button,
+		#exit-button {
+			background-color: #FF5555;
+			/* Red */
+		}
+
+		#stop-button:hover,
+		#exit-button:hover {
+			background-color: #CC0000;
+			/* Darker Red on hover */
+		}
+
+		#controls button#start-button {
+			background-color: #4CAF50;
+			/* Green */
+		}
+
+		#controls button#start-button:hover {
+			background-color: #45a049;
+			/* Darker Green on hover */
+		}
+
+		#controls button#stop-button,
+		#controls button#exit-button {
+			background-color: #FF5555;
+			/* Red */
+		}
+
+		#controls button#stop-button:hover,
+		#controls button#exit-button:hover {
+			background-color: #CC0000;
+			/* Darker Red on hover */
+		}
+
+		#header {
+			width: 100%;
+			text-align: center;
+			margin: 20px 0;
+			animation: fadeInUp 1s ease;
+		}
+
+		#header label {
+			color: #fff;
+			font-size: 50px;
+			font-weight: bold;
+		}
+
+		#controls {
+			width: 100%;
+			text-align: center;
+			margin: 20px 0;
+		}
+
+		#controls input {
+			padding: 8px;
+			margin-right: 10px;
+			border: none;
+			border-radius: 5px;
+		}
+
+		#controls button {
+			padding: 10px 20px;
+			font-size: 16px;
+			background-color: #4B0082;
+			color: #fff;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+			transition: background-color 0.3s ease;
+		}
+
+		#controls button:hover {
+			background-color: #800080;
+		}
+
+		#meeting-info {
+			text-align: center;
+			margin: 10px 0;
+			animation: fadeInUp 1s ease;
+		}
+
+		#meeting-info b {
+			color: #fff;
+		}
+
+		#video-list {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+			gap: 20px;
+			padding: 20px;
+			max-width: 1200px;
+			/* Adjust the maximum width as needed */
+			margin: 0 auto;
+			/* Center the video tiles */
+		}
+
+		#video-list div {
+			flex: 0 0 calc(33.33% - 20px);
+			/* Use flex property to distribute space */
+			box-sizing: border-box;
+			background-color: #fff;
+			border-radius: 8px;
+			box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+			overflow: hidden;
+			transition: transform 0.3s ease;
+		}
+
+		#video-list div:hover {
+			transform: scale(1.05);
+		}
+
+		#video-list video {
+			width: 100%;
+			height: auto;
+			border-bottom: 2px solid #ccc;
+		}
+
+		#video-list p {
+			text-align: center;
+			padding: 10px;
+			margin: 0;
+			font-size: 16px;
+			color: blueviolet;
+		}
+
+
+		@keyframes fadeInUp {
+			from {
+				opacity: 0;
+				transform: translateY(20px);
+			}
+
+			to {
+				opacity: 1;
+				transform: translateY(0);
+			}
+		}
+	</style>
+</head>
+
+<body>
+	<div id="header">
+		<label>Video Meet!</label>
+	</div>
+	<audio style="display: none" id="meeting-audio"></audio>
+	<div id="controls">
+		User Name: <input id="username" name="username" type="text" value="" />
+		<button type="button" id="start-button">Start Meeting</button>
+		<button type="button" id="stop-button">Stop Meeting</button>
+		<button type="button" id="exit-button">Exit Meeting</button>
+		<button type="button" id="share-button">Screen Share</button>
+	</div>
+	<div id="meeting-info">
+		<b>Meeting Id:</b> <label id="meeting-Id"></label><br><br>
+		<b>Meeting Link:</b> <label id="meeting-link"></label><br><br>
+		<b>Attendees:</b> <label id="Attendees"></label>
+	</div>
+	<hr>
+	<div id="video-list"></div>
+	<script src="assets/js/amazon-chime-sdk.min.js"></script>
+	<script src="assets/js/vid.js"></script>
+</body>
+
+</html>
