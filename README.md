@@ -1,4 +1,4 @@
-
+![Amazon Chime App Video](amazon_chime_app_video.jpg)
 ## Chech these out for better understanding
 **https://github.com/architecturebytes/videoconf**<br>
 **https://webrtc.ventures/2022/10/building-a-video-chat-with-the-amazon-chime-sdk/**<br>
